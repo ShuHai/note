@@ -6,18 +6,18 @@
 </head>
 <body>
   <script>
-    J = 'aA'
-    S = 'aAAbbbb'
-    var numJewelsInStones = function(J, S) {
-      let count = 0
-      S.split('').forEach(item => {
-        if(J.includes(item)) {
-          count += 1
-        }
-      })
-      return count
-    };
-    console.log(numJewelsInStones(J,S))
+    var judgeCircle = function(moves) {
+      var arr = moves.split('')
+      var count = function(arr, char) {
+        return arr.reduce((total, item) => total + ( char === item ), 0)
+      }
+      console.log(count(arr,'U'))
+      console.log(count(arr,'D'))
+      console.log(count(arr,'L'))
+      console.log(count(arr,'R'))
+      return count(arr,'U') === count(arr, 'D') && count(arr,'L') === count(arr, 'R')
+    }
+    console.log(judgeCircle('LLL'))
   </script>
 </body>
 </html>
