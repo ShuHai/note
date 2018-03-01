@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    J = 'aA'
+    S = 'aAAbbbb'
+    var numJewelsInStones = function(J, S) {
+      let count = 0
+      S.split('').forEach(item => {
+        if(J.includes(item)) {
+          count += 1
+        }
+      })
+      return count
+    };
+    console.log(numJewelsInStones(J,S))
+  </script>
+</body>
+</html>
